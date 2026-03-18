@@ -67,11 +67,17 @@
               <div class="photo-ring-outer"></div>
               <div class="avatar-ring">
                 <div class="avatar-img">
-                  <img src="art.png" alt="Art A. Kilat - HUMSS Graduate 2024"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-                  <div class="avatar-placeholder">AK</div>
+                  <!-- Use a reliable placeholder image since art.png might not exist -->
+                  <img src="https://ui-avatars.com/api/?name=Art+A.+Kilat&background=2563eb&color=fff&size=200" alt="Art Abenido - HUMSS Graduate 2024" style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
+                  <!-- Fallback placeholder in case image fails to load -->
+                  <div class="avatar-placeholder" style="display:none;">
+                    <span>AK</span>
+                  </div>
                 </div>
-              </div>
+                          <img src="art.png" alt="Art Abenido - HUMSS Graduate 2024" 
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
+                        </div>
               <div class="photo-status-badge"></div>
             </div>
             <h3 class="card-name">Art A. Kilat</h3>
