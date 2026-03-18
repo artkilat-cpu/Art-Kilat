@@ -466,7 +466,7 @@ nav.scrolled {
   background: conic-gradient(from 0deg, var(--blue-bright), var(--cyan-glow), var(--blue-sky), var(--blue-bright));
   padding: 4px;
   margin: 0 auto 20px;
-  animation: ringRotate 4s linear infinite;
+  animation: ringRotate 6s linear infinite;
   box-shadow:
     0 0 30px rgba(37,99,235,0.5),
     0 0 60px rgba(6,182,212,0.2),
@@ -475,8 +475,8 @@ nav.scrolled {
 }
 
 @keyframes ringRotate {
-  from { filter: hue-rotate(0deg); }
-  to { filter: hue-rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .avatar-img {
@@ -675,13 +675,9 @@ section {
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  border: 2px solid transparent;
-  background: conic-gradient(from 0deg, var(--blue-bright), var(--cyan-glow), var(--blue-sky), var(--blue-bright)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
+  border: 2px solid var(--blue-sky);
+  box-shadow: 0 0 20px rgba(37,99,235,0.35), 0 0 8px rgba(6,182,212,0.2);
   animation: ringSpinSlow 6s linear infinite;
-  box-shadow: 0 0 20px rgba(37,99,235,0.35);
 }
 
 .about-photo-img {
