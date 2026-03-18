@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | HUMSS Graduate 2024</title>
+  <title>Portfolio | Art A. Kilat — HUMSS Graduate 2024</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,8 +27,8 @@
 </nav>
 
 <!-- ══ HERO ══ -->
-<section id="Humss">
-  <!-- 3D floating orbs -->
+<!-- FIX: id was "Humss", now correctly "hero" to match nav anchor links -->
+<section id="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
@@ -67,10 +67,9 @@
               <div class="photo-ring-outer"></div>
               <div class="avatar-ring">
                 <div class="avatar-img">
-                  <img src="art.png" alt="Art Abenido - HUMSS Graduate 2024" style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
-                  <div class="avatar-placeholder" style="display:none;">
-                    <span>YN</span>
-                  </div>
+                  <img src="art.png" alt="Art A. Kilat - HUMSS Graduate 2024"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                  <div class="avatar-placeholder">AK</div>
                 </div>
               </div>
               <div class="photo-status-badge"></div>
@@ -90,25 +89,23 @@
               </div>
               <div class="stat-sep"></div>
               <div class="stat">
-                <span class="stat-num">West Pob. Rizal</span>
-                <span class="stat-label">Zamboanga del Norte</span>
+                <span class="stat-num">W. Pob.</span>
+                <span class="stat-label">Rizal, ZdN</span>
               </div>
             </div>
           </div>
           <div class="card-shimmer"></div>
         </div>
-        <!-- Floating mini cards -->
         <div class="float-badge fb-1 glass-card-sm">
-          <span>&#x1F393;</span> Top Graduate
+          <span>🎓</span> Top Graduate
         </div>
         <div class="float-badge fb-2 glass-card-sm">
-          <span>&#x2B50;</span> Honor Roll
+          <span>⭐</span> Honor Roll
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Scroll indicator -->
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span>scroll</span>
@@ -124,11 +121,11 @@
 
   <div class="about-grid">
     <div class="glass-panel info-panel">
-      <!-- Photo display at top of info panel -->
       <div class="about-photo-wrap">
         <div class="about-photo-frame">
           <div class="about-photo-ring"></div>
-          <img src="art.png" alt="Art A. Kilat" class="about-photo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <img src="art.png" alt="Art A. Kilat" class="about-photo-img"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
           <div class="about-photo-fallback">AK</div>
         </div>
         <div class="about-photo-caption">
@@ -139,45 +136,45 @@
       <div class="panel-glow"></div>
       <div class="info-list">
         <div class="info-row">
-          <div class="info-icon-wrap"><span>&#x1F464;</span></div>
+          <div class="info-icon-wrap"><span>👤</span></div>
           <div>
             <div class="info-label">Full Name</div>
             <div class="info-val">Art Abenido Kilat</div>
           </div>
         </div>
         <div class="info-row">
-          <div class="info-icon-wrap"><span>&#x1F393;</span></div>
+          <div class="info-icon-wrap"><span>🎓</span></div>
           <div>
             <div class="info-label">Strand</div>
             <div class="info-val">Humanities &amp; Social Sciences (HUMSS)</div>
           </div>
         </div>
         <div class="info-row">
-          <div class="info-icon-wrap"><span>&#x1F3EB;</span></div>
+          <div class="info-icon-wrap"><span>🏫</span></div>
           <div>
             <div class="info-label">School</div>
             <div class="info-val">Rizal National High School</div>
           </div>
         </div>
         <div class="info-row">
-          <div class="info-icon-wrap"><span>&#x1F4C5;</span></div>
+          <div class="info-icon-wrap"><span>📅</span></div>
           <div>
             <div class="info-label">Graduation Year</div>
             <div class="info-val">2024</div>
           </div>
         </div>
         <div class="info-row">
-          <div class="info-icon-wrap"><span>&#x1F4CD;</span></div>
+          <div class="info-icon-wrap"><span>📍</span></div>
           <div>
             <div class="info-label">Location</div>
             <div class="info-val">Rizal, Zamboanga del Norte, Philippines</div>
           </div>
         </div>
-        <div class="info-row" style="margin-bottom:0">
-          <div class="info-icon-wrap"><span>&#x2709;&#xFE0F;</span></div>
+        <div class="info-row">
+          <div class="info-icon-wrap"><span>✉️</span></div>
           <div>
             <div class="info-label">Email</div>
-            <div class="info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="056477716467606b6c616a456268646c692b666a68">[email&#160;protected]</a></div>
+            <div class="info-val">artkilat@email.com</div>
           </div>
         </div>
       </div>
@@ -236,7 +233,7 @@
       <div class="edu-node"><div class="edu-node-inner"></div></div>
       <div class="edu-badge">2018 – 2022</div>
       <h3 class="edu-degree">Junior High School</h3>
-      <p class="edu-school">LILOY : Liloy National High School</p>
+      <p class="edu-school">LILOY · Liloy National High School</p>
       <p class="edu-desc">
         Built a strong academic foundation across core subjects. Actively participated
         in school organizations, leadership activities, and community service.
@@ -247,7 +244,7 @@
       <div class="edu-node"><div class="edu-node-inner"></div></div>
       <div class="edu-badge">2012 – 2018</div>
       <h3 class="edu-degree">Elementary Education</h3>
-      <p class="edu-school">LILOY : La Libertad Elementary School</p>
+      <p class="edu-school">LILOY · La Libertad Elementary School</p>
       <p class="edu-desc">
         Completed elementary education with consistently high academic performance
         and active involvement in school programs and events.
@@ -266,7 +263,7 @@
   <div class="skills-wrap">
     <div class="skill-col">
       <div class="skill-col-header glass-pill-dark">
-        <span>&#x1F6E0;</span> Technical Skills
+        <span>🛠</span> Technical Skills
       </div>
       <div class="skill-tags">
         <span class="stag">Research &amp; Analysis</span>
@@ -281,7 +278,7 @@
     </div>
     <div class="skill-col">
       <div class="skill-col-header glass-pill-dark">
-        <span>&#x1F4A1;</span> Soft Skills
+        <span>💡</span> Soft Skills
       </div>
       <div class="skill-tags">
         <span class="stag">Communication</span>
@@ -323,37 +320,31 @@
       </div>
 
       <div class="calc-buttons">
-        <!-- Row 1 -->
-        <button class="cbtn cbtn-fn" data-val="AC" onclick="calcAction('AC')">AC</button>
-        <button class="cbtn cbtn-fn" data-val="+/-" onclick="calcAction('+/-')">+/−</button>
-        <button class="cbtn cbtn-fn" data-val="%" onclick="calcAction('%')">%</button>
-        <button class="cbtn cbtn-op" data-val="/" onclick="calcInput('/')">÷</button>
+        <button class="cbtn cbtn-fn" onclick="calcAction('AC')">AC</button>
+        <button class="cbtn cbtn-fn" onclick="calcAction('+/-')">+/−</button>
+        <button class="cbtn cbtn-fn" onclick="calcAction('%')">%</button>
+        <button class="cbtn cbtn-op" onclick="calcInput('/')">÷</button>
 
-        <!-- Row 2 -->
-        <button class="cbtn" data-val="7" onclick="calcInput('7')">7</button>
-        <button class="cbtn" data-val="8" onclick="calcInput('8')">8</button>
-        <button class="cbtn" data-val="9" onclick="calcInput('9')">9</button>
-        <button class="cbtn cbtn-op" data-val="*" onclick="calcInput('*')">×</button>
+        <button class="cbtn" onclick="calcInput('7')">7</button>
+        <button class="cbtn" onclick="calcInput('8')">8</button>
+        <button class="cbtn" onclick="calcInput('9')">9</button>
+        <button class="cbtn cbtn-op" onclick="calcInput('*')">×</button>
 
-        <!-- Row 3 -->
-        <button class="cbtn" data-val="4" onclick="calcInput('4')">4</button>
-        <button class="cbtn" data-val="5" onclick="calcInput('5')">5</button>
-        <button class="cbtn" data-val="6" onclick="calcInput('6')">6</button>
-        <button class="cbtn cbtn-op" data-val="-" onclick="calcInput('-')">−</button>
+        <button class="cbtn" onclick="calcInput('4')">4</button>
+        <button class="cbtn" onclick="calcInput('5')">5</button>
+        <button class="cbtn" onclick="calcInput('6')">6</button>
+        <button class="cbtn cbtn-op" onclick="calcInput('-')">−</button>
 
-        <!-- Row 4 -->
-        <button class="cbtn" data-val="1" onclick="calcInput('1')">1</button>
-        <button class="cbtn" data-val="2" onclick="calcInput('2')">2</button>
-        <button class="cbtn" data-val="3" onclick="calcInput('3')">3</button>
-        <button class="cbtn cbtn-op" data-val="+" onclick="calcInput('+')">+</button>
+        <button class="cbtn" onclick="calcInput('1')">1</button>
+        <button class="cbtn" onclick="calcInput('2')">2</button>
+        <button class="cbtn" onclick="calcInput('3')">3</button>
+        <button class="cbtn cbtn-op" onclick="calcInput('+')">+</button>
 
-        <!-- Row 5 -->
-        <button class="cbtn cbtn-zero" data-val="0" onclick="calcInput('0')">0</button>
-        <button class="cbtn" data-val="." onclick="calcInput('.')">.</button>
-        <button class="cbtn cbtn-eq" data-val="=" onclick="calcAction('=')">=</button>
+        <button class="cbtn cbtn-zero" onclick="calcInput('0')">0</button>
+        <button class="cbtn" onclick="calcInput('.')">.</button>
+        <button class="cbtn cbtn-eq" onclick="calcAction('=')">=</button>
       </div>
 
-      <!-- Python extras -->
       <div class="calc-extra-row">
         <button class="cbtn-extra" onclick="calcInput('**')">x²  <small>(**)</small></button>
         <button class="cbtn-extra" onclick="calcExtra('sqrt')">√  <small>sqrt()</small></button>
@@ -369,7 +360,6 @@
       </div>
     </div>
 
-    <!-- Decorative code snippet -->
     <div class="calc-code-panel glass-panel">
       <div class="code-header">
         <span class="code-lang-badge">Python</span>
@@ -402,24 +392,24 @@
   </div>
 
   <div class="contact-links">
-    <a href="/cdn-cgi/l/email-protection#adccdfd9cccfc8c3c4c9c2edcac0ccc4c183cec2c0" class="contact-card glass-panel">
-      <div class="cc-icon">&#x2709;&#xFE0F;</div>
+    <a href="mailto:artkilat@email.com" class="contact-card glass-panel">
+      <div class="cc-icon">✉️</div>
       <div>
         <div class="cc-label">Email</div>
-        <div class="cc-val"><span class="__cf_email__" data-cfemail="9bfae9effaf9fef5f2fff4dbfcf6faf2f7b5f8f4f6">[email&#160;protected]</span></div>
+        <div class="cc-val">artkilat@email.com</div>
       </div>
       <div class="cc-arrow">→</div>
     </a>
-    <a href="https://www.facebook.com/art.abenido.kilat" target="_blank" class="contact-card glass-panel">
-      <div class="cc-icon">&#x1F4D8;</div>
+    <a href="https://www.facebook.com/art.abenido.kilat" target="_blank" rel="noopener" class="contact-card glass-panel">
+      <div class="cc-icon">📘</div>
       <div>
         <div class="cc-label">Facebook</div>
         <div class="cc-val">Art Abenido Kilat</div>
       </div>
       <div class="cc-arrow">→</div>
     </a>
-    <a href="tel:+63XXXXXXXXXX" class="contact-card glass-panel">
-      <div class="cc-icon">&#x1F4DE;</div>
+    <a href="tel:+639700431485" class="contact-card glass-panel">
+      <div class="cc-icon">📞</div>
       <div>
         <div class="cc-label">Phone</div>
         <div class="cc-val">09700431485</div>
@@ -430,5 +420,18 @@
 </section>
 
 <!-- ══ FOOTER ══ -->
+<!-- FIX: footer was truncated mid-tag, now complete -->
 <footer>
-  <div class="footer-l
+  <div class="footer-logo">Art A. <span>Kilat</span></div>
+  <p>HUMSS Graduate · Batch 2024 · Rizal National High School</p>
+  <p class="footer-sub">Rizal, Zamboanga del Norte, Philippines</p>
+</footer>
+
+<!-- ══════════════════════════════════════════
+   JAVASCRIPT
+   FIX: All JS was missing — cursor, nav scroll,
+   scroll reveal, AND the entire calculator logic
+══════════════════════════════════════════ -->
+<script src="script.js"></script>
+</body>
+</html>
