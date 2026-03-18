@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | HUMSS Graduate 2024</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══ CURSOR ══ -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="nav-logo">Portfolio <span>2024</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-orb"></div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="Humss">
+  <!-- 3D floating orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+  <div class="grid-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge glass-pill">
+        <span class="badge-dot"></span>
+        HUMSS Graduate &bull; Batch 2024
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">Art A. Kilat</span>
+        <span class="name-accent">IT Student</span>
+      </h1>
+      <p class="hero-tagline">
+        Humanities &amp; Social Sciences graduate from RNHS, passionate about
+        communication, social advocacy, and lifelong learning.
+      </p>
+      <div class="hero-actions">
+        <a href="#about" class="btn-primary">
+          <span>Explore Portfolio</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="card-3d-wrapper">
+        <div class="card-3d glass-card hero-card">
+          <div class="card-inner">
+            <div class="avatar-ring">
+              <div class="avatar-img">
+                <img src="art.png" alt="Art Abenido - HUMSS Graduate 2024" style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
+                <div class="avatar-placeholder" style="display:none;">
+                  <span>YN</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="card-name">Art A. Kilat</h3>
+            <p class="card-strand">HUMSS Strand</p>
+            <div class="card-divider"></div>
+            <div class="card-stats">
+              <div class="stat">
+                <span class="stat-num">2024</span>
+                <span class="stat-label">Graduate</span>
+              </div>
+              <div class="stat-sep"></div>
+              <div class="stat">
+                <span class="stat-num">RNHS</span>
+                <span class="stat-label">School</span>
+              </div>
+              <div class="stat-sep"></div>
+              <div class="stat">
+                <span class="stat-num">West Pob. Rizal</span>
+                <span class="stat-label">Zamboanga del Norte</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-shimmer"></div>
+        </div>
+        <!-- Floating mini cards -->
+        <div class="float-badge fb-1 glass-card-sm">
+          <span>&#x1F393;</span> Top Graduate
+        </div>
+        <div class="float-badge fb-2 glass-card-sm">
+          <span>&#x2B50;</span> Honor Roll
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-eyebrow">Who I Am</span>
+    <h2 class="section-title">Basic <em>Information</em></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="glass-panel info-panel">
+      <div class="panel-glow"></div>
+      <div class="info-list">
+        <div class="info-row">
+          <div class="info-icon-wrap"><span>&#x1F464;</span></div>
+          <div>
+            <div class="info-label">Full Name</div>
+            <div class="info-val">Art Abenido Kilat</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon-wrap"><span>&#x1F393;</span></div>
+          <div>
+            <div class="info-label">Strand</div>
+            <div class="info-val">Humanities &amp; Social Sciences (HUMSS)</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon-wrap"><span>&#x1F3EB;</span></div>
+          <div>
+            <div class="info-label">School</div>
+            <div class="info-val">Rizal National High School</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon-wrap"><span>&#x1F4C5;</span></div>
+          <div>
+            <div class="info-label">Graduation Year</div>
+            <div class="info-val">2024</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon-wrap"><span>&#x1F4CD;</span></div>
+          <div>
+            <div class="info-label">Location</div>
+            <div class="info-val">Rizal, Zamboanga del Norte, Philippines</div>
+          </div>
+        </div>
+        <div class="info-row" style="margin-bottom:0">
+          <div class="info-icon-wrap"><span>&#x2709;&#xFE0F;</span></div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-val">artabenido@gmail.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-bio-wrap">
+      <p class="bio-text">
+        I am a proud graduate of the Humanities and Social Sciences (HUMSS) strand
+        at RNHS, Batch 2024. My academic journey has been defined by a deep love for
+        communication, critical thinking, and understanding the social fabric of our
+        communities.
+      </p>
+      <p class="bio-text">
+        Through HUMSS, I developed a strong foundation in reading, writing, and
+        analysis — skills essential not just in school, but in every aspect of life.
+        I am passionate about engaging with people, telling stories, and contributing
+        meaningfully to society.
+      </p>
+      <p class="bio-text">
+        I am driven, creative, and always eager to grow. I look forward to pursuing
+        higher education and building a career that reflects my values of service,
+        integrity, and excellence.
+      </p>
+      <div class="bio-tags">
+        <span class="bio-tag">Communication</span>
+        <span class="bio-tag">Social Advocacy</span>
+        <span class="bio-tag">Leadership</span>
+        <span class="bio-tag">Critical Thinking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-eyebrow">Academic Journey</span>
+    <h2 class="section-title">Education <em>Attainment</em></h2>
+  </div>
+
+  <div class="edu-timeline">
+    <div class="edu-connector"></div>
+
+    <div class="edu-item glass-panel reveal">
+      <div class="edu-node"><div class="edu-node-inner"></div></div>
+      <div class="edu-badge">2022 – 2024</div>
+      <h3 class="edu-degree">Senior High School — HUMSS Strand</h3>
+      <p class="edu-school">RNHS · West Poblacion, Rizal National High School</p>
+      <p class="edu-desc">
+        Completed the Humanities and Social Sciences track with focus on literature,
+        social studies, philosophy, and communication arts. Graduated Batch 2024 with distinction.
+      </p>
+    </div>
+
+    <div class="edu-item glass-panel reveal">
+      <div class="edu-node"><div class="edu-node-inner"></div></div>
+      <div class="edu-badge">2018 – 2022</div>
+      <h3 class="edu-degree">Junior High School</h3>
+      <p class="edu-school">LILOY : Liloy National High School</p>
+      <p class="edu-desc">
+        Built a strong academic foundation across core subjects. Actively participated
+        in school organizations, leadership activities, and community service.
+      </p>
+    </div>
+
+    <div class="edu-item glass-panel reveal">
+      <div class="edu-node"><div class="edu-node-inner"></div></div>
+      <div class="edu-badge">2012 – 2018</div>
+      <h3 class="edu-degree">Elementary Education</h3>
+      <p class="edu-school">LILOY : La Libertad Elementary School</p>
+      <p class="edu-desc">
+        Completed elementary education with consistently high academic performance
+        and active involvement in school programs and events.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-eyebrow">Capabilities</span>
+    <h2 class="section-title">My <em>Skills</em></h2>
+  </div>
+
+  <div class="skills-wrap">
+    <div class="skill-col">
+      <div class="skill-col-header glass-pill-dark">
+        <span>&#x1F6E0;</span> Technical Skills
+      </div>
+      <div class="skill-tags">
+        <span class="stag">Research &amp; Analysis</span>
+        <span class="stag">Academic Writing</span>
+        <span class="stag">Microsoft Word</span>
+        <span class="stag">Microsoft PowerPoint</span>
+        <span class="stag">Canva Design</span>
+        <span class="stag">Social Media Management</span>
+        <span class="stag">Data Entry</span>
+        <span class="stag">Content Creation</span>
+      </div>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-header glass-pill-dark">
+        <span>&#x1F4A1;</span> Soft Skills
+      </div>
+      <div class="skill-tags">
+        <span class="stag">Communication</span>
+        <span class="stag">Critical Thinking</span>
+        <span class="stag">Teamwork</span>
+        <span class="stag">Leadership</span>
+        <span class="stag">Time Management</span>
+        <span class="stag">Problem Solving</span>
+        <span class="stag">Adaptability</span>
+        <span class="stag">Public Speaking</span>
+        <span class="stag">Creativity</span>
+        <span class="stag">Empathy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS / CALCULATOR ══ -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-eyebrow">Projects</span>
+    <h2 class="section-title">Python <em>Calculator</em></h2>
+    <p class="section-sub">An interactive Python-style calculator — type expressions as you would in Python.</p>
+  </div>
+
+  <div class="calc-scene">
+    <div class="calc-glass">
+      <div class="calc-header-bar">
+        <div class="calc-dot cd-r"></div>
+        <div class="calc-dot cd-y"></div>
+        <div class="calc-dot cd-g"></div>
+        <span class="calc-title-bar">Python Calculator</span>
+      </div>
+
+      <div class="calc-display-area">
+        <div class="calc-expression" id="calcExpr">&nbsp;</div>
+        <div class="calc-result" id="calcResult">0</div>
+        <div class="calc-history" id="calcHistory"></div>
+      </div>
+
+      <div class="calc-buttons">
+        <!-- Row 1 -->
+        <button class="cbtn cbtn-fn" data-val="AC" onclick="calcAction('AC')">AC</button>
+        <button class="cbtn cbtn-fn" data-val="+/-" onclick="calcAction('+/-')">+/−</button>
+        <button class="cbtn cbtn-fn" data-val="%" onclick="calcAction('%')">%</button>
+        <button class="cbtn cbtn-op" data-val="/" onclick="calcInput('/')">÷</button>
+
+        <!-- Row 2 -->
+        <button class="cbtn" data-val="7" onclick="calcInput('7')">7</button>
+        <button class="cbtn" data-val="8" onclick="calcInput('8')">8</button>
+        <button class="cbtn" data-val="9" onclick="calcInput('9')">9</button>
+        <button class="cbtn cbtn-op" data-val="*" onclick="calcInput('*')">×</button>
+
+        <!-- Row 3 -->
+        <button class="cbtn" data-val="4" onclick="calcInput('4')">4</button>
+        <button class="cbtn" data-val="5" onclick="calcInput('5')">5</button>
+        <button class="cbtn" data-val="6" onclick="calcInput('6')">6</button>
+        <button class="cbtn cbtn-op" data-val="-" onclick="calcInput('-')">−</button>
+
+        <!-- Row 4 -->
+        <button class="cbtn" data-val="1" onclick="calcInput('1')">1</button>
+        <button class="cbtn" data-val="2" onclick="calcInput('2')">2</button>
+        <button class="cbtn" data-val="3" onclick="calcInput('3')">3</button>
+        <button class="cbtn cbtn-op" data-val="+" onclick="calcInput('+')">+</button>
+
+        <!-- Row 5 -->
+        <button class="cbtn cbtn-zero" data-val="0" onclick="calcInput('0')">0</button>
+        <button class="cbtn" data-val="." onclick="calcInput('.')">.</button>
+        <button class="cbtn cbtn-eq" data-val="=" onclick="calcAction('=')">=</button>
+      </div>
+
+      <!-- Python extras -->
+      <div class="calc-extra-row">
+        <button class="cbtn-extra" onclick="calcInput('**')">x²  <small>(**)</small></button>
+        <button class="cbtn-extra" onclick="calcExtra('sqrt')">√  <small>sqrt()</small></button>
+        <button class="cbtn-extra" onclick="calcExtra('abs')">|x|  <small>abs()</small></button>
+        <button class="cbtn-extra" onclick="calcInput('(')">( </button>
+        <button class="cbtn-extra" onclick="calcInput(')')"> )</button>
+        <button class="cbtn-extra cbtn-del" onclick="calcAction('DEL')">⌫</button>
+      </div>
+
+      <div class="calc-py-label">
+        <span class="py-dot"></span>
+        Powered by JavaScript · Python-style syntax
+      </div>
+    </div>
+
+    <!-- Decorative code snippet -->
+    <div class="calc-code-panel glass-panel">
+      <div class="code-header">
+        <span class="code-lang-badge">Python</span>
+        <span class="code-file">calculator.py</span>
+      </div>
+      <pre class="code-block"><span class="kw">def</span> <span class="fn">calculate</span>(expr):
+    <span class="co"># Evaluate a Python expression</span>
+    <span class="kw">try</span>:
+        result = <span class="fn">eval</span>(expr)
+        <span class="kw">return</span> result
+    <span class="kw">except</span> <span class="ty">Exception</span> <span class="kw">as</span> e:
+        <span class="kw">return</span> <span class="st">f"Error: {e}"</span>
+
+<span class="co"># Examples:</span>
+<span class="fn">calculate</span>(<span class="st">"2 + 3"</span>)   <span class="co"># → 5</span>
+<span class="fn">calculate</span>(<span class="st">"10 ** 2"</span>) <span class="co"># → 100</span>
+<span class="fn">calculate</span>(<span class="st">"9 ** 0.5"</span>)<span class="co"># → 3.0</span>
+<span class="fn">calculate</span>(<span class="st">"abs(-7)"</span>) <span class="co"># → 7</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="contact-orb"></div>
+  <div class="section-header">
+    <span class="section-eyebrow">Get In Touch</span>
+    <h2 class="section-title">Let's <em>Connect</em></h2>
+    <p class="section-sub">Open to opportunities, collaborations, or just a conversation.</p>
+  </div>
+
+  <div class="contact-links">
+    <a href="mailto:artabenido@gmail.com" class="contact-card glass-panel">
+      <div class="cc-icon">&#x2709;&#xFE0F;</div>
+      <div>
+        <div class="cc-label">Email</div>
+        <div class="cc-val">artabenido@gmail.com</div>
+      </div>
+      <div class="cc-arrow">→</div>
+    </a>
+    <a href="https://www.facebook.com/art.abenido.kilat" target="_blank" class="contact-card glass-panel">
+      <div class="cc-icon">&#x1F4D8;</div>
+      <div>
+        <div class="cc-label">Facebook</div>
+        <div class="cc-val">Art Abenido Kilat</div>
+      </div>
+      <div class="cc-arrow">→</div>
+    </a>
+    <a href="tel:+63XXXXXXXXXX" class="contact-card glass-panel">
+      <div class="cc-icon">&#x1F4DE;</div>
+      <div>
+        <div class="cc-label">Phone</div>
+        <div class="cc-val">09700431485</div>
+      </div>
+      <div class="cc-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">Portfolio <span>2024</span></div>
+  <p>HUMSS Graduate · RNHS · West Poblacion Rizal, Zamboanga del Norte· Philippines</p>
+  <p class="footer-sub">Crafted with care &amp; precision.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
