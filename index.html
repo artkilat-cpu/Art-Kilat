@@ -27,7 +27,6 @@
 </nav>
 
 <!-- ══ HERO ══ -->
-<!-- FIX: id was "Humss", now correctly "hero" to match nav anchor links -->
 <section id="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
@@ -65,19 +64,20 @@
             <div class="photo-panel">
               <div class="photo-panel-glow"></div>
               <div class="photo-ring-outer"></div>
+              <!-- FIX: Removed duplicate/broken img tag. Single img with onerror fallback. -->
               <div class="avatar-ring">
                 <div class="avatar-img">
-                  <!-- Use a reliable placeholder image since art.png might not exist -->
-                  <img src="https://ui-avatars.com/api/?name=Art+A.+Kilat&background=2563eb&color=fff&size=200" alt="Art Abenido - HUMSS Graduate 2024" style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
-                  <!-- Fallback placeholder in case image fails to load -->
-                  <div class="avatar-placeholder" style="display:none;">
+                  <img
+                    src="art.png"
+                    alt="Art A. Kilat - HUMSS Graduate 2024"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    style="width:100%;height:100%;object-fit:cover;object-position:top center;"
+                  />
+                  <div class="avatar-placeholder">
                     <span>AK</span>
                   </div>
                 </div>
-                          <img src="art.png" alt="Art Abenido - HUMSS Graduate 2024" 
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
-                        </div>
+              </div>
               <div class="photo-status-badge"></div>
             </div>
             <h3 class="card-name">Art A. Kilat</h3>
@@ -99,18 +99,18 @@
                 <span class="stat-label">Rizal, ZdN</span>
               </div>
             </div>
-          </div>
+          </div><!-- /.card-inner -->
           <div class="card-shimmer"></div>
-        </div>
+        </div><!-- /.card-3d -->
         <div class="float-badge fb-1 glass-card-sm">
           <span>🎓</span> Top Graduate
         </div>
         <div class="float-badge fb-2 glass-card-sm">
           <span>⭐</span> Honor Roll
         </div>
-      </div>
-    </div>
-  </div>
+      </div><!-- /.card-3d-wrapper -->
+    </div><!-- /.hero-visual -->
+  </div><!-- /.hero-content -->
 
   <div class="scroll-hint">
     <div class="scroll-line"></div>
@@ -130,8 +130,13 @@
       <div class="about-photo-wrap">
         <div class="about-photo-frame">
           <div class="about-photo-ring"></div>
-          <img src="art.png" alt="Art A. Kilat" class="about-photo-img"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <!-- FIX: img and fallback div are siblings inside the frame, not nested -->
+          <img
+            src="art.png"
+            alt="Art A. Kilat"
+            class="about-photo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
           <div class="about-photo-fallback">AK</div>
         </div>
         <div class="about-photo-caption">
@@ -183,8 +188,8 @@
             <div class="info-val">artkilat@email.com</div>
           </div>
         </div>
-      </div>
-    </div>
+      </div><!-- /.info-list -->
+    </div><!-- /.info-panel -->
 
     <div class="about-bio-wrap">
       <p class="bio-text">
@@ -211,7 +216,7 @@
         <span class="bio-tag">Critical Thinking</span>
       </div>
     </div>
-  </div>
+  </div><!-- /.about-grid -->
 </section>
 
 <!-- ══ EDUCATION ══ -->
@@ -256,7 +261,7 @@
         and active involvement in school programs and events.
       </p>
     </div>
-  </div>
+  </div><!-- /.edu-timeline -->
 </section>
 
 <!-- ══ SKILLS ══ -->
@@ -299,7 +304,7 @@
         <span class="stag">Empathy</span>
       </div>
     </div>
-  </div>
+  </div><!-- /.skills-wrap -->
 </section>
 
 <!-- ══ PROJECTS / CALCULATOR ══ -->
@@ -364,7 +369,7 @@
         <span class="py-dot"></span>
         Powered by JavaScript · Python-style syntax
       </div>
-    </div>
+    </div><!-- /.calc-glass -->
 
     <div class="calc-code-panel glass-panel">
       <div class="code-header">
@@ -385,7 +390,7 @@
 <span class="fn">calculate</span>(<span class="st">"9 ** 0.5"</span>)<span class="co"># → 3.0</span>
 <span class="fn">calculate</span>(<span class="st">"abs(-7)"</span>) <span class="co"># → 7</span></pre>
     </div>
-  </div>
+  </div><!-- /.calc-scene -->
 </section>
 
 <!-- ══ CONTACT ══ -->
@@ -426,18 +431,12 @@
 </section>
 
 <!-- ══ FOOTER ══ -->
-<!-- FIX: footer was truncated mid-tag, now complete -->
 <footer>
   <div class="footer-logo">Art A. <span>Kilat</span></div>
   <p>HUMSS Graduate · Batch 2024 · Rizal National High School</p>
   <p class="footer-sub">Rizal, Zamboanga del Norte, Philippines</p>
 </footer>
 
-<!-- ══════════════════════════════════════════
-   JAVASCRIPT
-   FIX: All JS was missing — cursor, nav scroll,
-   scroll reveal, AND the entire calculator logic
-══════════════════════════════════════════ -->
 <script src="script.js"></script>
 </body>
 </html>

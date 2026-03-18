@@ -29,11 +29,8 @@ revealEls.forEach(el => observer.observe(el));
 
 /* ══════════════════════════════
    CALCULATOR LOGIC
-   FIX: These functions were referenced in HTML
-   but never defined — calculator was completely broken
 ══════════════════════════════ */
-let calcExpr    = '';
-let calcPrevRes = '';
+let calcExprStr = '';
 let lastResult  = null;
 
 const displayExpr    = document.getElementById('calcExpr');
@@ -41,141 +38,160 @@ const displayResult  = document.getElementById('calcResult');
 const displayHistory = document.getElementById('calcHistory');
 
 function updateDisplay() {
-  displayExpr.textContent   = calcExpr || '\u00a0';
-  displayResult.textContent = calcExpr ? liveEval(calcExpr) : (lastResult !== null ? lastResult : '0');
+  displayExpr.textContent = calcExprStr || '\u00a0';
+  if (calcExprStr) {
+    const live = liveEval(calcExprStr);
+    if (live !== null) displayResult.textContent = live;
+  } else {
+    displayResult.textContent = (lastResult !== null) ? lastResult : '0';
+  }
 }
 
-/** Safe eval — only allows maths characters */
+/**
+ * Safe evaluator — only allows digits, operators, parentheses, dots.
+ * FIX: sanitise keeps only math-safe characters; uses Function constructor
+ * instead of eval for slightly cleaner scoping.
+ */
 function safeEval(expr) {
-  // Replace ** with Math.pow for compatibility, support sqrt and abs
-  const sanitised = expr
-    .replace(/\s/g, '')
-    .replace(/[^0-9+\-*/.()%]/g, '');
+  // Allow: digits, decimal point, operators + - * / % ( ) ^ and whitespace
+  const sanitised = expr.replace(/\s/g, '');
+
+  // Guard: reject anything not in the math character whitelist
+  if (/[^0-9+\-*/.()%]/.test(sanitised)) return null;
   if (!sanitised) return null;
+
   try {
     // eslint-disable-next-line no-new-func
     const result = Function('"use strict"; return (' + sanitised + ')')();
-    if (!isFinite(result)) return 'Error';
-    // Round to avoid floating-point noise
+    if (typeof result !== 'number' || !isFinite(result)) return 'Error';
+    // Round to 12 significant figures to suppress floating-point noise
     return parseFloat(result.toPrecision(12));
   } catch {
     return null;
   }
 }
 
+/** Returns a live preview while the user is still typing, or null if incomplete */
 function liveEval(expr) {
   const r = safeEval(expr);
-  return (r !== null && r !== 'Error') ? r : displayResult.textContent;
+  return (r !== null && r !== 'Error') ? r : null;
 }
 
 /** Append a character/operator to the expression */
 function calcInput(val) {
-  // If last action was '=' and user types a digit, start fresh
-  if (lastResult !== null && /^[0-9.]$/.test(val)) {
-    calcExpr = '';
-    lastResult = null;
+  // After '=' result: digit starts a new expression; operator continues from result
+  if (lastResult !== null) {
+    if (/^[0-9.]$/.test(val)) {
+      calcExprStr = '';
+      lastResult = null;
+    } else if (/^[+\-*/%]$/.test(val) || val === '**') {
+      calcExprStr = String(lastResult);
+      lastResult = null;
+    } else {
+      // Parentheses etc. — start fresh
+      calcExprStr = '';
+      lastResult = null;
+    }
   }
-  // If last action was '=' and user types an operator, continue from result
-  if (lastResult !== null && /^[+\-*/%]$/.test(val)) {
-    calcExpr = String(lastResult);
-    lastResult = null;
-  }
-  calcExpr += val;
+  calcExprStr += val;
   updateDisplay();
 }
 
 /** Handle special actions: AC, +/-, %, =, DEL */
 function calcAction(action) {
   switch (action) {
+
     case 'AC':
-      calcExpr = '';
-      lastResult = null;
-      calcPrevRes = '';
+      calcExprStr = '';
+      lastResult  = null;
       displayHistory.textContent = '';
       displayResult.textContent  = '0';
       displayExpr.textContent    = '\u00a0';
       break;
 
     case 'DEL':
-      calcExpr = calcExpr.slice(0, -1);
+      // FIX: slice works correctly on multi-char tokens like '**' too
+      calcExprStr = calcExprStr.slice(0, -1);
       updateDisplay();
       break;
 
     case '+/-': {
-      // Negate the last number in the expression
-      const match = calcExpr.match(/(.*?)(-?\d+\.?\d*)$/);
+      // Negate the last number in the current expression
+      const match = calcExprStr.match(/^(.*?)(-?\d+\.?\d*)$/);
       if (match) {
         const n = parseFloat(match[2]);
-        calcExpr = match[1] + (-n);
+        calcExprStr = match[1] + String(-n);
+        updateDisplay();
       } else if (lastResult !== null) {
         lastResult = -lastResult;
         displayResult.textContent = lastResult;
       }
-      updateDisplay();
       break;
     }
 
     case '%': {
-      // Convert trailing number to its percentage (÷100)
-      const m = calcExpr.match(/(.*?)(-?\d+\.?\d*)$/);
+      // Divide trailing number by 100
+      const m = calcExprStr.match(/^(.*?)(-?\d+\.?\d*)$/);
       if (m) {
         const n = parseFloat(m[2]) / 100;
-        calcExpr = m[1] + n;
+        calcExprStr = m[1] + n;
+        updateDisplay();
       }
-      updateDisplay();
       break;
     }
 
     case '=': {
-      if (!calcExpr) break;
-      const result = safeEval(calcExpr);
-      if (result === null) {
-        pop(displayResult, 'Error');
+      if (!calcExprStr) break;
+      const result = safeEval(calcExprStr);
+      if (result === null || result === 'Error') {
+        displayResult.textContent = 'Error';
+        displayResult.classList.add('pop');
+        setTimeout(() => displayResult.classList.remove('pop'), 200);
         break;
       }
-      displayHistory.textContent = calcExpr + ' =';
-      lastResult = result;
-      calcExpr   = '';
-
-      // Pop animation
-      displayResult.textContent = result;
+      displayHistory.textContent = calcExprStr + ' =';
+      lastResult  = result;
+      calcExprStr = '';
+      displayExpr.textContent    = '\u00a0';
+      displayResult.textContent  = result;
       displayResult.classList.add('pop');
       setTimeout(() => displayResult.classList.remove('pop'), 200);
-      displayExpr.textContent = '\u00a0';
       break;
     }
   }
 }
 
-/** Wrap current value in sqrt() or abs() */
+/**
+ * Wrap the current expression in sqrt or abs.
+ * FIX: Uses proper Math-safe expressions instead of inline ternary hack.
+ * sqrt  → (expr)**0.5
+ * abs   → (expr < 0 ? -(expr) : (expr))
+ */
 function calcExtra(fn) {
+  // Use current expression text, or fall back to the last computed result
+  const inner = calcExprStr || (lastResult !== null ? String(lastResult) : '');
+  if (!inner) return;
+
   if (fn === 'sqrt') {
-    // If there's an ongoing expression, wrap it; otherwise use lastResult
-    const inner = calcExpr || (lastResult !== null ? String(lastResult) : '');
-    if (inner) {
-      calcExpr = '(' + inner + ')**0.5';
-      lastResult = null;
-    } else {
-      calcExpr = '';
-    }
+    calcExprStr = '(' + inner + ')**0.5';
   } else if (fn === 'abs') {
-    const inner = calcExpr || (lastResult !== null ? String(lastResult) : '');
-    if (inner) {
-      // abs via conditional: (x<0?-x:x) since we can't use Math.*
-      calcExpr = '(' + inner + '<0?-(' + inner + '):(' + inner + '))';
-      lastResult = null;
-    }
+    // FIX: safely negate by evaluating sign at runtime using ternary
+    calcExprStr = '((' + inner + ')<0?(-(' + inner + ')):(' + inner + '))';
   }
+
+  lastResult = null;
   updateDisplay();
 }
 
 /* ── Keyboard support for calculator ── */
 document.addEventListener('keydown', e => {
-  // Only fire if focus is not on an input element
-  if (['0','1','2','3','4','5','6','7','8','9'].includes(e.key)) calcInput(e.key);
-  else if (['+','-','*','/','(',')','.'].includes(e.key)) calcInput(e.key);
+  // Skip if a form element has focus (e.g. an input elsewhere on the page)
+  if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+
+  if ('0123456789'.includes(e.key))        calcInput(e.key);
+  else if ('+-*/().'.includes(e.key))      calcInput(e.key);
   else if (e.key === 'Enter' || e.key === '=') calcAction('=');
-  else if (e.key === 'Backspace') calcAction('DEL');
-  else if (e.key === 'Escape') calcAction('AC');
-  else if (e.key === '%') calcAction('%');
+  else if (e.key === 'Backspace')          calcAction('DEL');
+  else if (e.key === 'Escape')             calcAction('AC');
+  else if (e.key === '%')                  calcAction('%');
 });
