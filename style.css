@@ -434,15 +434,6 @@ nav.scrolled {
   50% { opacity: 1; transform: scale(1.08); }
 }
 
-.photo-ring-outer {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px dashed rgba(147,197,253,0.3);
-  animation: ringSpinSlow 18s linear infinite;
-  z-index: 1;
-}
-
 .photo-ring-outer::before {
   content: '';
   position: absolute;
