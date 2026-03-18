@@ -1,11 +1,3 @@
-/* =============================================
-   PORTFOLIO — script.js
-   3D Glass Blue | Python Calculator
-   ============================================= */
-
-/* ══════════════════════════════
-   CUSTOM CURSOR
-══════════════════════════════ */
 const cursor      = document.getElementById('cursor');
 const cursorTrail = document.getElementById('cursorTrail');
 let mouseX = 0, mouseY = 0;

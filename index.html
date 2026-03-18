@@ -62,13 +62,18 @@
       <div class="card-3d-wrapper">
         <div class="card-3d glass-card hero-card">
           <div class="card-inner">
-            <div class="avatar-ring">
-              <div class="avatar-img">
-                <img src="art.png" alt="Art Abenido - HUMSS Graduate 2024" style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
-                <div class="avatar-placeholder" style="display:none;">
-                  <span>YN</span>
+            <div class="photo-panel">
+              <div class="photo-panel-glow"></div>
+              <div class="photo-ring-outer"></div>
+              <div class="avatar-ring">
+                <div class="avatar-img">
+                  <img src="art.png" alt="Art Abenido - HUMSS Graduate 2024" style="width:100%;height:100%;object-fit:cover;object-position:top center;"/>
+                  <div class="avatar-placeholder" style="display:none;">
+                    <span>YN</span>
+                  </div>
                 </div>
               </div>
+              <div class="photo-status-badge"></div>
             </div>
             <h3 class="card-name">Art A. Kilat</h3>
             <p class="card-strand">HUMSS Strand</p>
@@ -119,6 +124,18 @@
 
   <div class="about-grid">
     <div class="glass-panel info-panel">
+      <!-- Photo display at top of info panel -->
+      <div class="about-photo-wrap">
+        <div class="about-photo-frame">
+          <div class="about-photo-ring"></div>
+          <img src="art.png" alt="Art A. Kilat" class="about-photo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="about-photo-fallback">AK</div>
+        </div>
+        <div class="about-photo-caption">
+          <span class="about-photo-name">Art A. Kilat</span>
+          <span class="about-photo-role">HUMSS Graduate · 2024</span>
+        </div>
+      </div>
       <div class="panel-glow"></div>
       <div class="info-list">
         <div class="info-row">
@@ -160,7 +177,7 @@
           <div class="info-icon-wrap"><span>&#x2709;&#xFE0F;</span></div>
           <div>
             <div class="info-label">Email</div>
-            <div class="info-val">artabenido@gmail.com</div>
+            <div class="info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="056477716467606b6c616a456268646c692b666a68">[email&#160;protected]</a></div>
           </div>
         </div>
       </div>
@@ -385,11 +402,11 @@
   </div>
 
   <div class="contact-links">
-    <a href="mailto:artabenido@gmail.com" class="contact-card glass-panel">
+    <a href="/cdn-cgi/l/email-protection#adccdfd9cccfc8c3c4c9c2edcac0ccc4c183cec2c0" class="contact-card glass-panel">
       <div class="cc-icon">&#x2709;&#xFE0F;</div>
       <div>
         <div class="cc-label">Email</div>
-        <div class="cc-val">artabenido@gmail.com</div>
+        <div class="cc-val"><span class="__cf_email__" data-cfemail="9bfae9effaf9fef5f2fff4dbfcf6faf2f7b5f8f4f6">[email&#160;protected]</span></div>
       </div>
       <div class="cc-arrow">→</div>
     </a>
@@ -414,11 +431,4 @@
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <div class="footer-logo">Portfolio <span>2024</span></div>
-  <p>HUMSS Graduate · RNHS · West Poblacion Rizal, Zamboanga del Norte· Philippines</p>
-  <p class="footer-sub">Crafted with care &amp; precision.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+  <div class="footer-l
